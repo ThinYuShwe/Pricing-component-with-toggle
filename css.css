@@ -1,0 +1,209 @@
+body,
+main,
+h1,
+div,
+p,
+button,
+section,
+article {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --linear-gradient-start: hsl(236, 72%, 79%);
+  --linear-gradient-end: hsl(237, 63%, 64%);
+  --VeryLightGrayishBlue: hsl(240, 78%, 98%);
+  --LightGrayishBlue: hsl(234, 14%, 74%);
+  --GrayishBlue: hsl(233, 13%, 49%);
+  --DarkGrayishBlue: hsl(232, 13%, 33%);
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-image: url(bg-top.svg), url(bg-bottom.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 100% 0, 0 100%;
+  background-color: var(--VeryLightGrayishBlue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+h1 {
+  color: var(--GrayishBlue);
+}
+
+.annuallyAndmonthly {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  color: var(--LightGrayishBlue);
+  font-weight: bolder;
+}
+
+.toggle {
+  width: 5rem;
+  height: 2rem;
+  background: linear-gradient(
+    to right,
+    var(--linear-gradient-start),
+    var(--linear-gradient-end)
+  );
+  border-radius: 4rem;
+  display: flex;
+  justify-content: flex-end;
+  transition: 0.2s ease-in-out;
+  padding: 0.2rem;
+}
+
+.toggle-circle {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.toggle-active{
+  justify-content: flex-start;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+section article {
+  /* width: 20rem; */
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  padding: 1.8rem;
+  font-weight: bolder;
+}
+
+article span {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.basic,
+.master {
+  background-color: white;
+  color: var(--GrayishBlue);
+}
+
+.monthlyCost {
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.basic h2,
+.master h2 {
+  color: var(--GrayishBlue);
+}
+
+.professional {
+  background: linear-gradient(
+    to right,
+    var(--linear-gradient-start),
+    var(--linear-gradient-end)
+  );
+  color: white;
+}
+
+.professional .monthlyCost {
+  color: white;
+}
+
+.professional h2 {
+  color: white;
+}
+
+.professional button {
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  color: var(--linear-gradient-end);
+  background-color: white;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  border: none;
+}
+
+.professional button:hover {
+  background: linear-gradient(
+    to right,
+    var(--linear-gradient-start),
+    var(--linear-gradient-end)
+  );
+  border: 1px solid white;
+  color: white;
+}
+
+.basic button,
+.master button {
+  background: linear-gradient(
+    to right,
+    var(--linear-gradient-start),
+    var(--linear-gradient-end)
+  );
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  border: none;
+}
+
+.basic button:hover,
+.master button:hover {
+  border: 1px solid var(--linear-gradient-end);
+  background: white;
+  color: var(--linear-gradient-start);
+}
+
+hr {
+  border: 1px solid rgba(241, 241, 241, 0.619);
+  width: 100%;
+}
+
+@media screen and (min-width: 75rem) {
+  section {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+  }
+
+  section article {
+    width: 20rem;
+  }
+
+  .professional {
+    height: 31rem;
+  }
+}
